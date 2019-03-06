@@ -1,7 +1,29 @@
+%flex {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
 html {
   background: url('assets/img/agenda-bg.jpg') no-repeat center center fixed;
   background-size: cover;
+  height: 100%;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
+  min-height: 100%;
+  margin: 0;
+  @extend %flex;
 }
+
+ji-root {
+  @extend %flex;
+
+  > *:not(router-outlet) {
+    @extend %flex;
+  }
+}
+
