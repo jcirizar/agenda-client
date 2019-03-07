@@ -4,6 +4,7 @@
   flex: 1;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 html {
@@ -33,7 +34,7 @@ body {
 ji-root {
   @extend %flex;
 
-  > *:not(router-outlet) {
+  > *:not(router-outlet):not(.signature) {
     @extend %flex;
   }
 }
@@ -42,4 +43,8 @@ ji-root {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.mat-form-field.no-padding > .mat-form-field-wrapper {
+  margin-bottom: -1.25em;
 }

@@ -6,19 +6,33 @@ import {AppComponent} from './app.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {AppointmentsComponent} from './appointments/appointments.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatNativeDateModule, MatToolbarModule
+} from '@angular/material';
+import { SlotComponent } from './slot/slot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    SlotComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

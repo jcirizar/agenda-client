@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TimeHelpersService} from '../time-helpers.service';
 
 @Component({
   selector: 'ji-appointments',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private time: TimeHelpersService) {
+  }
 
   ngOnInit() {
+    const intervals = this.time.getSlotsIntervals('900', 8, 60);
+
   }
 
 }
