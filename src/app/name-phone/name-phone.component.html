@@ -1,0 +1,35 @@
+<mat-card>
+  <form [formGroup]="namePhoneForm" novalidate (ngSubmit)="formSubmit()">
+
+    <mat-card-title>
+      {{variableText}} {{appointment?.time | date:'short'}}
+    </mat-card-title>
+
+    <mat-card-content>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input type="tel" matInput jiPhoneNumberFormatter formControlName="phone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button type="submit"
+              [disabled]="namePhoneForm.pristine || namePhoneForm.invalid"
+              mat-button mat-raised-button color="primary">{{variableText}}</button>
+      <button (click)="cancelDialog($event)"
+              mat-button color="warn">Cancel
+      </button>
+    </mat-card-actions>
+
+
+  </form>
+</mat-card>

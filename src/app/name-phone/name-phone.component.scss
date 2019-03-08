@@ -1,0 +1,13 @@
+@import "~src/styles/theme/variables";
+
+mat-card-title {
+  margin-bottom: $padding;
+}
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  text-align: right;
+  margin-bottom: 0;
+}

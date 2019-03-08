@@ -8,20 +8,27 @@ import {AppointmentsComponent} from './appointments/appointments.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
+  MatCardModule,
   MatDatepickerModule,
+  MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatNativeDateModule, MatToolbarModule
+  MatNativeDateModule
 } from '@angular/material';
-import { SlotComponent } from './slot/slot.component';
+import {SlotComponent} from './slot/slot.component';
+import {NamePhoneComponent} from './name-phone/name-phone.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {PhoneNumberFormatterDirective} from './phone-number-formatter.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     AppointmentsComponent,
-    SlotComponent
+    SlotComponent,
+    NamePhoneComponent,
+    PhoneNumberFormatterDirective
   ],
   imports: [
     BrowserModule,
@@ -32,9 +39,17 @@ import { SlotComponent } from './slot/slot.component';
     MatNativeDateModule,
     MatButtonModule,
     MatIconModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatCardModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  entryComponents: [
+    NamePhoneComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

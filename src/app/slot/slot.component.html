@@ -1,3 +1,5 @@
-<p>
-  slot works!
-</p>
+<mat-card [class.booked]="booked">
+  <mat-card-title>
+    {{time | date:'shortTime'}}
+  </mat-card-title>
+</mat-card>

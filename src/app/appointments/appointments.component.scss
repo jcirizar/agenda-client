@@ -1,7 +1,13 @@
+@import "~src/styles/theme/variables";
+:host {
+  width: 100%;
+}
+
 .content {
   width: 100%;
   flex: 1;
   height: 100%;
+  overflow: auto;
 }
 
 .header {
@@ -10,8 +16,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: $padding /2;
 }
 
-.jc-date {
+.slots {
+  margin: 0 auto;
+  max-width: 90%;
 
+  ji-slot {
+    display: block;
+    margin-bottom: $padding /2;
+  }
 }
