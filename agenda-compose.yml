@@ -1,0 +1,25 @@
+version: '2'
+services:
+  app:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - VIRTUAL_HOST=agenda.jcirizar.com
+      - VIRTUAL_PORT=80
+      - VIRTUAL_NETWORK=nginx-proxy
+      - LETSENCRYPT_HOST=mfpum.jcirizar.com
+      - LETSENCRYPT_EMAIL=developer@jcirizar.com
+    ports:
+      - "9000"
+    restart: always
+    networks:
+      - proxy-tier
+      - back
+
+
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy
+  back:
+    driver: bridge
